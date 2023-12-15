@@ -35,7 +35,7 @@ const submit = () => {
 
         <a
         href="http://127.0.0.1:8000/"
-        class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+        class="underline text-white text-sm hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
         >
             Cancel
         </a>
@@ -59,7 +59,7 @@ const submit = () => {
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full bg-customgray font-[lateef] text-xl"
+                    class="mt-1 block w-full text-gray-800"
                     placeholder="Email Address"
                     v-model="form.email"
                     required
@@ -75,7 +75,7 @@ const submit = () => {
                 <TextInput
                     id="password"
                     type="password"
-                    class="mt-1 block w-full bg-customgray font-[lateef] text-xl"
+                    class="mt-1 block w-full text-gray-800"
                     placeholder="Password"
                     v-model="form.password"
                     required
@@ -86,17 +86,22 @@ const submit = () => {
             </div>
 
             <div class="block mt-1 text-sm">
-                <label class="flex items-center">
-                    <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                </label>
+                  <label class="flex items-center">
+                  <Checkbox name="remember" v-model:checked="form.remember" />
+                 <span class="ml-2 text-sm text-white">Remember me</span>
+               </label>
             </div>
             
-            <div class="mt-5 ">
-                <PrimaryButton class=" w-full content-center text-center bg-white text-black font-lalezar" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
-                </PrimaryButton>
-            </div>
+            <div class="mt-5">
+    <PrimaryButton
+        class="w-full content-center text-center bg-white font-lalezar"
+        :class="{ 'opacity-25': form.processing }"
+        :disabled="form.processing"
+        style="color: rgb(21, 20, 27);"
+    >
+        Log in
+    </PrimaryButton>
+</div>
             <div class="flex items-center justify-end mt-4">
 
                 
