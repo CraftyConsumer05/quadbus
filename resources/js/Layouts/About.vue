@@ -79,6 +79,7 @@ Though challenges arose along the way, the quartet's united front propelled Quad
 Today, Quad stands as a testament to their shared dream. Their narrative echoes a tale of four minds united by a common vision, reshaping the bus reservation landscape through innovation, technology, and an unwavering dedication to enhancing every traveler's journey.`, // Your story content
       missionText: `At Quad, we revolutionize travel experiences by offering seamless, efficient, and safe transport solutions. Guided by our core values, we are committed to delivering timely, cost-effective, and top-quality transportation services, ensuring customer satisfaction and safety at every step.`, // Your mission content
       visionText: `Quad endeavors to be the premier choice in the transportation industry. Our aim is to set the benchmark for excellence, becoming the go-to transport company. We aspire to enhance the lives of our customers by providing unparalleled services, empower our dedicated team, generate optimal returns for our stakeholders, and contribute significantly to the growth and development of the communities we serve. Through our commitment to innovation and service excellence, we strive to elevate the travel experience for all.`, // Your vision content
+      mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d396904.6674331936!2d-74.0059731!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ1JzEwLjciTiA3MMKwMTYnMjIuMiJX!5e0!3m2!1sen!2sus!4v1546999834881"
     };
   },
 };
