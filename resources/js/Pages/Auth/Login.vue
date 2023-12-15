@@ -34,7 +34,9 @@ const submit = () => {
         <img src="partas_logo.png" class="h-11 mr-3" style="margin-bottom: 30px;">
         <Head title="Log in" />
 
-        <h1 class="text-white text-4xl font-lalezar mt-1">
+        
+
+        <h1 class=" text-white text-4xl font-lalezar mt-1">
             Log In
         </h1>
         <h2 class="text-white text-xl font-[lateef] mt-0" style="margin-bottom: 30px;">
@@ -95,7 +97,7 @@ const submit = () => {
                 :disabled="form.processing"
                 style="color: #001E48; text-align: center;"
             >
-                <span style="display: block;">Log in</span>
+                <span class="w-full text-center">Log in</span>
             </PrimaryButton>
 
 
@@ -122,7 +124,8 @@ const submit = () => {
             </div>
 
 
-            <p style="color: white; text-align: center; margin: 20px;">Don’t have an account? <span style="color: #FF9E9E;"><Link
+            <p style="color: white; text-align: center; margin: 20px;">Don’t have an account? <span style="color: #FF9E9E;">
+                    <Link
                         :href="route('register')"
                         class="text-red-400"
                     >

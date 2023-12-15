@@ -98,7 +98,7 @@ const submit = () => {
                 :disabled="form.processing"
                 style="color: #001E48; text-align: center;"
             >
-                <span style="display: block;">Register</span>
+                <span class="w-full text-center">Register</span>
             </PrimaryButton>
             </div>
 
