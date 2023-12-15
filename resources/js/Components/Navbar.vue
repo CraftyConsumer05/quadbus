@@ -23,7 +23,6 @@ window.addEventListener('click', (e) => {
       <div class="flex items-center justify-start">
         <Link href="/dashboard" class="flex ml-2 md:mr-24">
           <img src="../../../public/partas_logo.png" class="h-8 mr-3" alt="FlowBite Logo" />
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">QUAD BUS</span>
         </Link>
       </div>
     <div class="flex items-center">
