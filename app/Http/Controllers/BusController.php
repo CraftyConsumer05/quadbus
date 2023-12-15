@@ -14,28 +14,10 @@ class BusController extends Controller
      */
     public function index()
     {
+
         $buses = Bus::all();
-
-        // Initialize arrays for chart data
-        $xValues = [];
-        $yValues1 = [];
-        $yValues2 = [];
-
-        foreach ($buses as $bus) {
-            // Assuming 'type' is the category and 'capacity' is the data point
-            $xValues[] = $bus->type;
-            $yValues1[] = $bus->capacity;
-            // Add another array if needed for yValues2
-            // For example: $yValues2[] = $bus->someOtherField;
-        }
-
-        return Inertia::render('Buses/List', [
-            'buses' => $buses,
-            'chartData' => [
-                'xValues' => $xValues,
-                'yValues1' => $yValues1,
-                'yValues2' => $yValues2, // Include if needed
-            ],
+        return Inertia::render('Buses/List',[
+            'buses' => $buses
         ]);
     }
 
