@@ -40,9 +40,11 @@ const props = defineProps({
     <AuthenticatedLayout>
         
 
-        <div class="py-12">
+        <div class="py-5 font-lalezar">
+      <div class="flex justify-center text-white text-xl">
+                        <h1>ADD NEW SCHEDULE</h1>
+                    </div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="overflow-hidden ma-8 w-100  bg-red-200 rounded-lg border shadow-xs">
                     <div class="overflow-x-auto  mx-8 ">
                             <form @submit.prevent="update" >
                                 <div class="md:w-1/3">
@@ -77,7 +79,6 @@ const props = defineProps({
                     </div>
                 </div>
             </div>
-        </div>
 
     </AuthenticatedLayout>
 </template>

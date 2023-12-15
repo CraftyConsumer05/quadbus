@@ -39,10 +39,12 @@ const props = defineProps({
     <AuthenticatedLayout>
 
 
-        <div class="py-12">
+        <div class="py-5 font-lalezar text-xl">
+            <div class="flex justify-center text-white">
+                        <h1>EDIT ROUTE</h1>
+                    </div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="overflow-hidden ma-8  bg-red-200 rounded-lg border shadow-xs">
-                    <div class="overflow-x-auto  m-8 ">
+                    <div class="overflow-x-auto  m-6 ">
                             <form @submit.prevent="update" >
                                 <div class="mb-4">
                                     <InputLabel for="origin" class="block font-medium text-gray-700">
@@ -67,7 +69,6 @@ const props = defineProps({
                     </div>
                 </div>
             </div>
-        </div>
 
     </AuthenticatedLayout>
 </template>

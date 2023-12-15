@@ -68,9 +68,11 @@ onMounted(() => {
   <Head title="Create Bus " />
 
   <AuthenticatedLayout>
-    <div class="py-12">
+    <div class="py-5 font-lalezar">
+      <div class="flex justify-center text-white text-xl">
+                        <h1>ADD NEW SCHEDULE</h1>
+                    </div>
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="overflow-hidden ma-8 w-100 bg-red-200 rounded-lg border shadow-xs">
           <div class="flex md:items-center m-6">
             <form class="w-full max-w-sm" @submit.prevent="submit">
                 <div class="md:w-1/3 relative">
@@ -105,14 +107,13 @@ onMounted(() => {
                                     <option v-for="bus in buses"  :value="bus.id">{{ bus.code }} - {{ bus.type }}</option>
                                  </select>
 
-                                <div class=" py-3 md:w-1/3">
+                                <div class=" pt-5 ">
                                 <PrimaryButton type="submit"> Submit  </PrimaryButton>
                                 </div>
                             </form>
                     </div>
                 </div>
             </div>
-        </div>
 
     </AuthenticatedLayout>
 </template>

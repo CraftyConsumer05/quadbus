@@ -21,12 +21,10 @@ function destroy(id){
 
     <AuthenticatedLayout>
 
-        <div class="py-12">
+        <div class="py-5 font-lalezar">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                   <div class="p-3 ">
-                    <Link :href="route('schedule.create')" class="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-semibold px-3 py-2 rounded mx-2"
-                            as="button">
+                    <Link :href="route('schedule.create')" class="flex items-center bg-customgray hover:bg-white hover:text-black text-white font-semibold px-3 py-2 rounded mx-2 border border-white" as="button">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -37,25 +35,25 @@ function destroy(id){
 
                     <div class="p-6 text-gray-900">
                         <div class="overflow-x-auto w-full">
-                            <table class="w-full whitespace-no-wrap">
+                            <table class="w-full whitespace-no-wrap text-white">
                             <thead>
-                            <tr class="text-xs font-semibold TableRowacking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
+                            <tr class="text-sm font-semibold TableRowacking-wide text-left  border-b">
                                 <th class="px-4 py-3">Departure Time</th>
-                                <th class="px-4 py-3">Arrival Time</th>
+                                <th class="px-6 py-3">Arrival Time</th>
                                 <th class="px-4 py-3">Origin</th>
                                 <th class="px-4 py-3">Destination</th>
 
                                 <th class="px-4 py-3">Bus Type</th>
-                                <th class="px-4 py-3">Action</th>
+                                <th class="px-9 py-3">Action</th>
 
                             </tr>
                             </thead>
-                            <tbody class="bg-white divide-y" >
+                            <tbody class= "" >
                                 <tr v-for="schedule in schedules" :key="schedule.id" class="border-b transition duration-300 ease-in-out hover:bg-neutral-300 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                    <td>
+                                    <td class="mr-3">
                                     {{ schedule.departure_time }}
                                     </td>
-                                    <td >
+                                    <td class="p-4">
                                     {{ schedule.arrival_time }}
                                     </td>
                                     <td >
@@ -93,6 +91,5 @@ function destroy(id){
                     </div>
                 </div>
             </div>
-        </div>
     </AuthenticatedLayout>
 </template>

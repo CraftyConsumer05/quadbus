@@ -61,13 +61,12 @@ const $toast = useToast();
     <AuthenticatedLayout>
 
 
-        <div class="py-12">
+        <div class="py-5 font-lalezar text-xl">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="overflow-hidden ma-8 w-100  bg-red-200 rounded-lg border shadow-xs">
-                    <div class="p-3 flex justify-center">
+                    <div class="flex justify-center text-white">
                         <h1>ADD NEW ROUTE</h1>
                     </div>
-                    <div class="overflow-x-auto  m-5">
+                    <div class="overflow-x-auto  m-5 text-xl">
                         <form class="w-full max-w-sm"  @submit.prevent="submit">
                             <div class="mb-4">
                                 <InputLabel for="origin" class="block font-medium text-gray-700">Select Origin:</InputLabel>
@@ -95,7 +94,6 @@ const $toast = useToast();
                     </div>
                 </div>
             </div>
-        </div>
 
     </AuthenticatedLayout>
 </template>

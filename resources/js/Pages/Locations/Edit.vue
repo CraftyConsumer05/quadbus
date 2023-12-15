@@ -39,6 +39,9 @@ const props = defineProps({
 
 
         <div class="py-12 font-lalezar text-xl">
+            <div class="flex justify-center text-white">
+                        <h1>EDIT LOCATION</h1>
+                    </div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="overflow-x-auto  mx-8 ">
                             <form @submit.prevent="update" >

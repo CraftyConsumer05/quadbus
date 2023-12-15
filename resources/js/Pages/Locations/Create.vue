@@ -25,20 +25,23 @@ import TextInput from '@/Components/TextInput.vue'
 <template>
     <Head title="Create Location" />
     <AuthenticatedLayout>
-        <div class="py-12 font-lalezar">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="py-5 font-lalezar text-xl">
+            <div class="flex justify-center text-white">
+                        <h1>ADD NEW LOCATION</h1>
+                    </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-xl">
               
                         <form class="w-full max-w-sm"
                         @submit.prevent="submit">
                             <div class="md:w-1/3">
-                            <InputLabel for="location" class=""
+                            <InputLabel for="location" class="text-xl"
                                 value="Location"/>
                             </div>
                         <div class="block w-full">
                             <TextInput id="location" type="text"
                         v-model="form.location" required />
                         </div>
-                        <div class=" py-3 ">
+                        <div class=" py-3 pt-5 ">
                         <PrimaryButton type="submit"> Submit
                         </PrimaryButton>
                         </div>
