@@ -15,17 +15,14 @@ defineProps({
 </script>
 
 <template>
-    <div>
-        <div class="min-h-screen bg-gray-100">
-            <Navbar/>
-            <Sidebar/>
-            <main class="bg-blue-400 shadow">
-                <div class="p-4 sm:ml-64">
-                    <div class="p-4 mt-14">
-                        <slot/>
-                    </div>
-                </div>
-            </main>
+    <div class="min-h-screen bg-gradient-to-b from-green-400 to-blue-400 py-4 flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+      <Navbar />
+      <Sidebar />
+      <main class="bg-customgray flex justify-center items-center rounded-lg ml-20 mt-14 px-2 ">
+        <div class="p-4">
+            <slot />
         </div>
+      </main>
     </div>
-</template>
+  </template>
+  

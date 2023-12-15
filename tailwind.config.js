@@ -15,6 +15,9 @@ export default {
     theme: {
         colors:{
             'customgray':'#1D3557',
+            'customDarkGray':'#192f4d',
+            'highlightColor':'#264573',
+
         },
 
         extend: {

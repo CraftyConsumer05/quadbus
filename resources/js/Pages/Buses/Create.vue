@@ -109,32 +109,33 @@ function validateCapacity() {
 <template>
   <Head title="Create Bus" />
   <AuthenticatedLayout>
-    <div class="py-12">
+    <div class="py-12 font-lalezar">
+      <h2 class="text-2xl  text-center text-white">Add New Bus</h2>
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="overflow-hidden ma-8 w-100 bg-red-200 rounded-lg border shadow-xs">
+        <div class="text-white">
           <div class="flex md:items-center m-6">
-            <form class="w-full max-w-sm" @submit.prevent="submit">
+            <form class="w-full max-w-sm text-white" @submit.prevent="submit">
               <div class="md:w-1/3">
-                <InputLabel for="code" class="" value="Code" />
+                <InputLabel for="code" class="text-white" value="Code" />
               </div>
-              <div class="block w-full">
+              <div class="block w-full text-black">
                 <TextInput id="origin" type="text" v-model="form.code" required readonly />
               </div>
-              <InputLabel for="type" class="block font-medium text-gray-700">Select Bus Type:</InputLabel>
-              <select id="type" v-model="form.type" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none focus:border-indigo-500">
+              <InputLabel for="type" class="block font-medium text-white pt-4">Select Bus Type:</InputLabel>
+              <select id="type" v-model="form.type" class="mt-1 block w-full px-4 py-2 bg-white  text-black border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none focus:border-indigo-500">
                 <option value="deluxe">De Luxe</option>
                 <option value="firstclass">First Class</option>
                 <option value="luxury">Luxury</option>
                 <option value="superdeluxe">Super De Luxe</option>
               </select>
-              <InputLabel for="capacity" class="block w-1/2 mt-5" value="Capacity" />
-              <TextInput
+              <InputLabel for="capacity" class="block w-1/2 mt-5 text-white" value="Capacity" />
+              <TextInput class="text-black"
                 id="capacity"
                 type="number"
                 v-model="form.capacity"
                 required
               />
-              <div class=" py-3 md:w-1/3">
+              <div class=" pt-8 md:w-1/3">
                 <PrimaryButton type="submit">Submit</PrimaryButton>
               </div>
             </form>
