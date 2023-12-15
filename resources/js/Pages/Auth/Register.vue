@@ -113,12 +113,12 @@ const submit = () => {
 
             <div class="text-center mt-5">
                 <p style="color: white;">
-                    Don’t have an account?
+                    Already Have an Account?
                     <Link
-                        :href="route('register')"
+                        :href="route('login')"
                         class="text-red-400"
                     >
-                        Register Now
+                        Log in Now
                     </Link>
                 </p>
             </div>

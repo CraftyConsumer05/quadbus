@@ -122,7 +122,12 @@ const submit = () => {
             </div>
 
 
-            <p style="color: white; text-align: center; margin: 20px;">Don’t have an account? <span style="color: #FF9E9E;">Register Now</span></p>
+            <p style="color: white; text-align: center; margin: 20px;">Don’t have an account? <span style="color: #FF9E9E;"><Link
+                        :href="route('register')"
+                        class="text-red-400"
+                    >
+                    Register Now
+                    </Link></span></p>
 
         </form>
 
