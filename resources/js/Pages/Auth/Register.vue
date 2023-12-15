@@ -22,19 +22,19 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Register" />
+        <img src="partas_logo.png" class="h-11 mr-3" style="margin-bottom: 20px;">
 
-        <a
-        href="http://127.0.0.1:8000/"
-        class="underline text-white text-sm hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-        >
-            Cancel
-        </a>
+        <h1 class="text-white text-4xl font-lalezar mt-1">
+            Register
+        </h1>
+        <h2 class="text-white text-xl font-[lateef] mt-0" style="margin-bottom: 20px;">
+            Continue your journey with Quad.
+        </h2>
+
+        <Head title="Register" />
         
         <form @submit.prevent="submit"  class="text-white">
             <div>
-                <InputLabel for="name" value="Name"  class="text-white"/>
-
                 <TextInput
                     id="name"
                     type="text"
@@ -43,14 +43,13 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="name"
+                    placeholder="Name"
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="email" value="Email"  class="text-white" />
-
                 <TextInput
                     id="email"
                     type="email"
@@ -58,14 +57,13 @@ const submit = () => {
                     v-model="form.email"
                     required
                     autocomplete="username"
+                    placeholder="Email"
                 />
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password"  class="text-white"/>
-
                 <TextInput
                     id="password"
                     type="password"
@@ -73,14 +71,13 @@ const submit = () => {
                     v-model="form.password"
                     required
                     autocomplete="new-password"
+                    placeholder="Password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password"  class="text-white"/>
-
                 <TextInput
                     id="password_confirmation"
                     type="password"
@@ -88,23 +85,63 @@ const submit = () => {
                     v-model="form.password_confirmation"
                     required
                     autocomplete="new-password"
+                    placeholder="Confirm Password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <Link
-                    :href="route('login')"
-                    class="underline text-sm text-white-600 hover:text-white-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Already registered?
-                </Link>
-
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
+            <div class="mt-5">
+                <PrimaryButton
+                class="w-full content-center bg-white"
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"
+                style="color: #001E48; text-align: center;"
+            >
+                <span style="display: block;">Register</span>
+            </PrimaryButton>
             </div>
+
+            <div class="flex items-center gap-4" style="margin-top: 20px;">
+                <a
+                    href="http://127.0.0.1:8000/"
+                    class="underline text-white text-sm hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 mr-auto"
+                >
+                    Cancel
+                </a>
+            </div>
+
+            <div class="text-center mt-5">
+                <p style="color: white;">
+                    Don’t have an account?
+                    <Link
+                        :href="route('register')"
+                        class="text-red-400"
+                    >
+                        Register Now
+                    </Link>
+                </p>
+            </div>
+
         </form>
     </GuestLayout>
 </template>
+<style>
+body {
+    /* Standard syntax */
+    background: hsla(217, 100%, 50%, 1);
+    /* Fallback for older browsers */
+    background: radial-gradient(circle, hsla(217, 100%, 50%, 1) 27%, hsla(186, 100%, 69%, 1) 100%);
+    /* For Mozilla Firefox */
+    background: -moz-radial-gradient(circle, hsla(217, 100%, 50%, 1) 27%, hsla(186, 100%, 69%, 1) 100%);
+    /* For Webkit (Safari, Chrome) */
+    background: -webkit-radial-gradient(circle, hsla(217, 100%, 50%, 1) 27%, hsla(186, 100%, 69%, 1) 100%);
+    /* For Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0061FF", endColorstr="#60EFFF", GradientType=1);
+    /* Other properties for body */
+    margin: 0;
+    padding: 0;
+    /* Ensure full height */
+    height: 100vh;
+}
+</style>

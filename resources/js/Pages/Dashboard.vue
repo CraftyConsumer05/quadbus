@@ -4,9 +4,11 @@ import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
 import Chart from 'chart.js/auto';
 
-const xValues = ["Deluxe", "First Class", "Luxury", "Super Deluxe"];
-const yValues1 = [20, 35, 10, 15];
-const yValues2 = [20, 35, 10, 15]; // Replace with your second set of data
+const { chartData } = $page.props; // Assuming you're using Vue 3 + Composition API
+
+const xValues = chartData.xValues;
+const yValues1 = chartData.yValues1;
+const yValues2 = chartData.yValues2 || []; // Use an empty array as a fallback
 const barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9"];
 
 onMounted(() => {
