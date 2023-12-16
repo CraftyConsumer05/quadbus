@@ -5,6 +5,15 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import VueHcaptcha from '@hcaptcha/vue3-hcaptcha';
+
+import {useToast} from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+import { onMounted } from 'vue';
+import { watchEffect } from 'vue';
+import { propsToAttrMap } from '@vue/shared';
+
+const $toast = useToast();
 
 const form = useForm({
     name: '',
@@ -13,11 +22,47 @@ const form = useForm({
     password_confirmation: '',
 });
 
-const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
+const hcaptchaExecute = async () => {
+    return new Promise((resolve, reject) => {
+        if (typeof window !== 'undefined' && window.hcaptcha) {
+            window.hcaptcha.execute({ async: true }).then((token) => {
+                resolve(token);
+            }).catch((error) => {
+                reject(error);
+            });
+        } else {
+            reject('hCaptcha is not loaded');
+        }
     });
 };
+
+const submit = async () => {
+    try {
+        console.log("SUBMITTED");
+        const token = hcaptchaExecute().then(()=>{
+            form.post(route('register'), {
+                onFinish: () => form.reset('password', 'password_confirmation'),
+            });
+        }).catch(
+            ()=>{
+                $toast.info("Finish Captha Before Proceeding", {
+                position: "top",
+                dismissible: true,
+                duration: 3000
+                });
+            }
+        )
+    } catch (error) {
+        console.error('hCaptcha execution error:', error);
+    }
+};
+
+
+// const submit = () => {
+//     form.post(route('register'), {
+//         onFinish: () => form.reset('password', 'password_confirmation'),
+//     });
+// };
 </script>
 
 <template>
@@ -91,7 +136,11 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
-            <div class="mt-5">
+            <div class="flex justify-center w-full mt-2">
+                <VueHcaptcha sitekey="7e2b537e-83ef-4ad4-93bd-aa6751074f1d"/>
+            </div>
+
+            <div class="mt-3">
                 <PrimaryButton
                 class="w-full content-center bg-white"
                 :class="{ 'opacity-25': form.processing }"
