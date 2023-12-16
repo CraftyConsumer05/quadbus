@@ -2,15 +2,15 @@
   <div>
     <Head title="Dashboard" />
 
-    <AuthenticatedLayout>
+    <AuthenticatedLayout class="auth">
       <div class="flex justify-between p-2 dark:border-gray-700 mt-14 bg-blue-400">
         <!-- First pie chart -->
-        <div style="width: 25%;">
+        <div style="width: 25%; margin:0 200px;">
           <canvas ref="chart1" style="width: 50%; height: 400px;"></canvas>
         </div>
 
         <!-- Second chart -->
-        <div style="width: 65%;">
+        <div style="width: 65%; margin:0 200px 0 0;">
           <canvas ref="chart2" style="width: 50%; height: 200px;"></canvas>
         </div>
       </div>
@@ -101,5 +101,7 @@ export default {
 </script>
 
 <style>
-/* Your styles here */
+.auth{
+  padding: 10px;
+}
 </style>
