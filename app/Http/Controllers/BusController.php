@@ -17,7 +17,8 @@ class BusController extends Controller
 
         $buses = Bus::all();
         return Inertia::render('Buses/List',[
-            'buses' => $buses
+            'buses' => $buses,
+            'message' => session('message')
         ]);
     }
 
@@ -65,7 +66,8 @@ class BusController extends Controller
         'capacity' => Request::get('capacity'),
     ]);
 
-    return redirect()->route('buses')->with('success', 'New Bus created.');
+    return redirect()->route('buses')->with('message', 'success:New Bus
+    Created.');
 }
 
 
@@ -106,7 +108,8 @@ class BusController extends Controller
             'type' =>Request::get('type'),
             'capacity' =>Request::get('capacity'),
         ]);
-        return to_route('buses')->with('success', 'Route  edited.');
+        return to_route('buses')->with('message', 'success:location
+        Updated.');
     }
 
     /**

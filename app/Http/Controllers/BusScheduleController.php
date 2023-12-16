@@ -28,7 +28,10 @@ class BusScheduleController extends Controller
                INNER JOIN buses on buses.id = bus_schedules.bus_id";
 
        $schedules= DB::select($query);
-       return Inertia::render('Schedules/List',['schedules'=>$schedules]);
+       return Inertia::render('Schedules/List',[
+            'schedules'=>$schedules,
+            'message' => session('message')
+        ]);
     }
 
     public function indexAPI()
@@ -67,7 +70,8 @@ class BusScheduleController extends Controller
             "price"=> Request::get("price"),
 
         ]);
-        return to_route('schedules')->with('success', 'New  created.');
+        return to_route('schedules')->with('message', 'success:Schedule 
+        added.');
 
     }
 
@@ -117,7 +121,8 @@ class BusScheduleController extends Controller
             "route_id"=> Request::get("route_id"),
             "bus_id"=> Request::get("bus_id")
         ]);
-        return to_route('schedules')->with('success', 'Schedule  Updated.');
+        return to_route('schedules')->with('message', 'success:Schedule
+        Updated.');
 
     }
 

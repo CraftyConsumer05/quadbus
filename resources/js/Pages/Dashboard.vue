@@ -3,15 +3,15 @@
     <Head title="Dashboard" />
 
     <AuthenticatedLayout class="auth">
-      <div class="flex justify-between p-2 dark:border-gray-700 mt-14 bg-blue-400">
+      <div class="flex justify-center dark:border-gray-700 mt-14 bg-blue-400">
         <!-- First pie chart -->
-        <div style="width: 25%; margin:0 200px;">
-          <canvas ref="chart1" style="width: 50%; height: 400px;"></canvas>
+        <div style="width: 50%; margin:0 100px 0 350px;">
+          <canvas ref="chart1"></canvas>
         </div>
 
         <!-- Second chart -->
-        <div style="width: 65%; margin:0 200px 0 0;">
-          <canvas ref="chart2" style="width: 50%; height: 200px;"></canvas>
+        <div style="width: 50%; margin:150px 0 0 -100px;">
+          <canvas ref="chart2"></canvas>
         </div>
       </div>
 
