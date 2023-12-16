@@ -67,7 +67,9 @@ const submit = async () => {
 
 <template>
     <GuestLayout>
-        <img src="partas_logo.png" class="h-11 mr-3" style="margin-bottom: 20px;">
+        <Link href="/"> 
+            <img src="partas_logo.png" class="h-11 mr-3">
+        </Link>
 
         <h1 class="text-white text-4xl font-lalezar mt-1">
             Register

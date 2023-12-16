@@ -31,7 +31,10 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <img src="partas_logo.png" class="h-11 mr-3" style="margin-bottom: 30px;">
+        <Link href="/"> 
+            <img src="partas_logo.png" class="h-11 mr-3">
+        </Link>
+        
         <Head title="Log in" />
 
         
